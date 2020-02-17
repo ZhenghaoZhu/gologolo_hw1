@@ -25,7 +25,10 @@ export const AppsterCallback = {
     APPSTER_PROCESS_GO_HOME: "processGoHome",
     APPSTER_PROCESS_DELETE_WORK: "processDeleteWork",
     APPSTER_PROCESS_CONFIRM_DELETE_WORK: "processConfirmDeleteWork",
-    APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork"
+    APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork",
+    APPSTER_PROCESS_OK_EDIT_TEXT: "processOKEditText",
+    APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT: "processConfirmNewWork",
+    APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT: "processCancelNewWork"
 };
 
 /**
@@ -101,7 +104,10 @@ export const AppsterGUIId = {
     APPSTER_TEXT_INPUT_MODAL_TEXTFIELD: "appster_text_input_modal_textfield",
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON: 'appster_text_input_modal_enter_button',
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON: 'appster_text_input_modal_cancel_button',
-    APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer'
+    APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer',
+    // ERROR HANDLING MODALS
+    APPSTER_EMPTY_WORK_NAME_ERROR_PROMPT: "appster_empty_work_name_error_prompt",
+    APPSTER_EXISTING_WORK_NAME_ERROR_PROMPT: "appster_existing_work_name_error_prompt"
 };
 
 /**
@@ -143,7 +149,8 @@ export const AppsterHTML = {
   * and scale well.
   */
  export const AppsterSymbols = {
-    DELETE: "&#128465;"     // TRASH SYMBOL
+    DELETE: "&#128465;",     // TRASH SYMBOL
+    EDIT: "&#x270e;" // PEN SYMBOL
 };
 
 export const AppsterText = {
@@ -153,16 +160,16 @@ export const AppsterText = {
     APPSTER_EDIT_HOME_LINK_TEXT: "appster_edit_home_link_text",
     APPSTER_MISSING_ROOT_DIV_ERROR_TEXT: "appster_missing_root_div_error_text",
 
-    APPSTER_YES_NO_MODAL_PROMPT_TEXT: "appster_yes_no_modal_prompt_text",
+    APPSTER_YES_NO_MODAL_PROMPT_TEXT: "appster_yes_no_modal_prompt_text", // For Part 2
     APPSTER_YES_NO_MODAL_YES_BUTTON_TEXT: "appster_yes_no_modal_yes_button_text",
     APPSTER_YES_NO_MODAL_NO_BUTTON_TEXT: "appster_yes_no_modal_no_button_text",
     APPSTER_YES_NO_MODAL_FOOTER_TEXT: "appster_yes_no_modal_footer_text",
 
-    APPSTER_CONFIRM_MODAL_PROMPT_TEXT: "appster_confirm_modal_prompt_text",
+    APPSTER_CONFIRM_MODAL_PROMPT_TEXT: "appster_confirm_modal_prompt_text", // For Part 3
     APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT: "appster_confirm_modal_ok_button_text",
     APPSTER_CONFIRM_MODAL_FOOTER_TEXT: "appster_confirm_modal_footer_text",
 
-    APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT: "appster_text_input_modal_prompt_text",
+    APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT: "appster_text_input_modal_prompt_text", // For Part 1 
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON_TEXT: "appster_text_input_modal_enter_button_text",
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT: "appster_text_input_modal_cancel_button_text",
     APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT: "appster_text_input_modal_footer_text",

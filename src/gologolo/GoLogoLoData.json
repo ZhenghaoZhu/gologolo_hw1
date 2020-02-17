@@ -9,7 +9,7 @@
         {"appster_yes_no_modal_prompt_text": "Are you sure you want to delete this logo?"},
         {"appster_yes_no_modal_yes_button_text": "Yes"},
         {"appster_yes_no_modal_no_button_text": "No"},
-        {"appster_yes_no_modal_footer_text": "The logo will not be retreivable."},
+        {"appster_yes_no_modal_footer_text": "The logo will not be retrievable."},
         
         {"appster_confirm_modal_prompt_text": "Illegal name, logo already exists with that name"},
         {"appster_confirm_modal_ok_button_text": "Ok"},
@@ -29,6 +29,7 @@
         {"gologolo_border_thickness_text": "Border Thickness: "},
         {"gologolo_padding_text": "Padding: "},
         {"gologolo_margin_text": "Margin: "}
+
     ],
     "recent_work": [
         {

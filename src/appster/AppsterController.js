@@ -34,10 +34,17 @@ export default class AppsterController {
         // THEN THE CONTROLS ON THE EDIT SCREEN
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_HOME_LINK, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_GO_HOME]);
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TRASH, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_DELETE_WORK]);
-
+        // NEED TO ADD MORE CONTROLS FOR EDIT SCREEN
+        
         // AND THE MODAL BUTTONS
+        // YES/NO MODAL YES NO BUTTONS
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
+        // TEXT MODAL OK BUTTON 
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EDIT_TEXT]);
+        // TEXT MODAL ENTER CANCEL BUTTONS
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT]);
     }
 
     /**
@@ -129,7 +136,7 @@ export default class AppsterController {
      * name of the list via the textfield.
      */
     processChangeName() {
-        let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD);
+        let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD); // FIXME: Fix Legacy code in this line
         let newName = nameTextField.value;
         let listBeingEdited = window.todo.model.listToEdit;
         window.todo.model.updateListName(listBeingEdited, newName);

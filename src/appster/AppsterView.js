@@ -361,6 +361,15 @@ export default class AppsterView {
         return newA;
     }
 
+    buildEmptyWorkNameErrorPrompt() {
+        let emptyWorkNameErrorPromptModal = this.buildElement( AppsterHTML.DIV,
+                                                               AppsterGUIId.APPSTER_EMPTY_WORK_NAME_ERROR_PROMPT,
+                                                               [AppsterGUIClass.APPSTER_MODAL],
+                                                               [],
+                                                               null,
+                                                               AppsterGUIClass.MODAL_ANIMATION_LEFT);
+    }
+
     refreshRecentWork(recentWork) {
         // GET THE RECENT WORK ELEMENT
         let recentWorkList = document.getElementById(AppsterGUIId.APPSTER_HOME_RECENT_WORK_LIST);
