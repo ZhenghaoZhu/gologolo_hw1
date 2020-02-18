@@ -1,5 +1,6 @@
 import AppsterModel from '../appster/AppsterModel.js'
 import GoLogoLoLogo from './GoLogoLoLogo.js'
+import { GoLogoLoDefaults } from './GoLogoLoConstants.js'
 
 export default class GoLogoLoModel extends AppsterModel {
     constructor() {
@@ -44,7 +45,20 @@ export default class GoLogoLoModel extends AppsterModel {
         return appWork;
     }
 
-    updateText() {
- //       this.view.
+    updateText(workArray, name) { // To add new work into workList
+        let appWork = new GoLogoLoLogo();
+        
+        appWork.setName(name);
+        appWork.setText(GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT);
+        appWork.setFontSize(GoLogoLoDefaults.GOLOGOLO_DEFAULT_FONT_SIZE);
+        appWork.setTextColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT_COLOR);
+        appWork.setBackgroundColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BACKGROUND_COLOR);
+        appWork.setBorderColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_COLOR);
+        appWork.setBorderRadius(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_RADIUS);
+        appWork.setBorderThickness(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS);
+        appWork.setPadding(GoLogoLoDefaults.GOLOGOLO_DEFAULT_PADDING);
+        appWork.setMargin(GoLogoLoDefaults.GOLOGOLO_DEFAULT_MARGIN);
+
+        return appWork;
     }
 }
