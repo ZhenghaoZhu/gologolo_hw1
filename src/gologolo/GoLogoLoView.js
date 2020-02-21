@@ -112,4 +112,24 @@ export default class GoLogoLoView extends AppsterView {
         let textModal = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL);
         textModal.classList.remove(AppsterGUIClass.IS_VISIBLE);
     }
+
+    showTextModalNoInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR);
+        errorInputModal.classList.add(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    hideTextModalNoInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR);
+        errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    showTextModalDuplicateInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR);
+        errorInputModal.classList.add(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    hideTextModalDuplicateInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR);
+        errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
+    }
 }

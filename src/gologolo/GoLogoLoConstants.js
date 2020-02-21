@@ -26,7 +26,7 @@ export const GoLogoLoGUIId = {
     GOLOGOLO_BORDER_THICKNESS_SLIDER: "gologolo_border_thickness_slider",
     GOLOGOLO_PADDING_SLIDER: "gologolo_padding_slider",
     GOLOGOLO_MARGIN_SLIDER: "gologolo_margin_slider",
-    GOLOGOLO_TEXT: "gologolo_text"
+    GOLOGOLO_TEXT: "gologolo_text",
 };
 
 export const GoLogoLoText = {

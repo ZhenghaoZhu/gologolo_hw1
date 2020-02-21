@@ -11,14 +11,22 @@
         {"appster_yes_no_modal_no_button_text": "No"},
         {"appster_yes_no_modal_footer_text": "The logo will not be retrievable."},
         
-        {"appster_confirm_modal_prompt_text": "Illegal name, logo already exists with that name"},
+        {"appster_confirm_modal_prompt_text": "Please input text to change name of current logo."},
         {"appster_confirm_modal_ok_button_text": "Ok"},
-        {"appster_confirm_modal_footer_text": "Duplicate Name"},
+        {"appster_confirm_modal_footer_text": "The name should be unique and at least one character."},
         
         {"appster_text_input_modal_prompt_text": "Enter a name for your logo: "},
         {"appster_text_input_modal_enter_button_text": "Enter"},
         {"appster_text_input_modal_cancel_button_text": "Cancel"},
         {"appster_text_input_modal_footer_text": "Creating New Logo"},
+
+        {"appster_confirm_modal_no_input_error_prompt_text": "Please input one or more characters in the text box."},
+        {"appster_confirm_modal_no_input_error_ok_button_text": "Ok"},
+        {"appster_confirm_modal_no_input_error_footer_text": ""},
+
+        {"appster_confirm_modal_duplicate_input_error_prompt_text": "Please input a unique name to the text box."},
+        {"appster_confirm_modal_duplicate_input_error_ok_button_text": "Ok"},
+        {"appster_confirm_modal_duplicate_input_error_footer_text": ""},
 
         {"gologolo_edit_text_text": "Edit Text &#x270e;"},
         {"gologolo_font_size_text": "Font Size: "},

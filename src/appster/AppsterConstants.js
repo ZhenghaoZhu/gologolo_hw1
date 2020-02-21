@@ -28,7 +28,8 @@ export const AppsterCallback = {
     APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork",
     APPSTER_PROCESS_OK_EDIT_TEXT: "processOKEditText",
     APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT: "processConfirmNewWork",
-    APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT: "processCancelNewWork"
+    APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT: "processCancelNewWork",
+    APPSTER_PROCESS_OK_EXIT_ERROR: "processOKExitError"
 };
 
 /**
@@ -91,12 +92,15 @@ export const AppsterGUIId = {
     APPSTER_YES_NO_MODAL_YES_BUTTON: 'appster_yes_no_modal_yes_button',
     APPSTER_YES_NO_MODAL_NO_BUTTON: 'appster_yes_no_modal_no_button',
     APPSTER_YES_NO_MODAL_FOOTER: 'appster_yes_no_modal_footer',
+
     APPSTER_CONFIRM_MODAL: 'appster_confirm_modal',
     APPSTER_CONFIRM_MODAL_FRAME: 'appster_confirm_modal_frame',
     APPSTER_CONFIRM_MODAL_HEADER: 'appster_confirm_modal_header',
     APPSTER_CONFIRM_MODAL_SECTION: 'appster_confirm_modal_section',
+    APPSTER_CONFIRM_MODAL_TEXTFIELD: "appster_confirm_modal_textfield",
     APPSTER_CONFIRM_MODAL_OK_BUTTON: 'appster_confirm_modal_ok_button',
     APPSTER_CONFIRM_MODAL_FOOTER: 'appster_confirm_frame',
+    
     APPSTER_TEXT_INPUT_MODAL: 'appster_text_input_modal',
     APPSTER_TEXT_INPUT_MODAL_FRAME: 'appster_text_input_modal_frame',
     APPSTER_TEXT_INPUT_MODAL_HEADER: 'appster_text_input_modal_header',
@@ -105,9 +109,16 @@ export const AppsterGUIId = {
     APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON: 'appster_text_input_modal_enter_button',
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON: 'appster_text_input_modal_cancel_button',
     APPSTER_TEXT_INPUT_MODAL_FOOTER: 'appster_text_input_modal_footer',
-    // ERROR HANDLING MODALS
-    APPSTER_EMPTY_WORK_NAME_ERROR_PROMPT: "appster_empty_work_name_error_prompt",
-    APPSTER_EXISTING_WORK_NAME_ERROR_PROMPT: "appster_existing_work_name_error_prompt"
+
+    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR: 'appster_confirm_modal_no_input_error',
+    APPSTER_CONFIRM_MODAL_FRAME_NO_INPUT_ERROR_FRAME: 'appster_confirm_modal_no_input_error_frame',
+    APPSTER_CONFIRM_MODAL_SECTION_NO_INPUT_ERROR_SECTION: 'appster_confirm_modal_no_input_error_section',
+    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON: 'appster_confirm_modal_no_input_error_ok_button',
+
+    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR: 'appster_confirm_modal_duplicate_input_error',
+    APPSTER_CONFIRM_MODAL_FRAME_DUPLICATE_INPUT_ERROR_FRAME: 'appster_confirm_modal_duplicate_input_error_frame',
+    APPSTER_CONFIRM_MODAL_SECTION_DUPLICATE_INPUT_ERROR_SECTION: 'appster_confirm_modal_duplicate_input_error_section',
+    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON: 'appster_confirm_modal_duplicate_input_error_ok_button',
 };
 
 /**
@@ -174,5 +185,13 @@ export const AppsterText = {
     APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON_TEXT: "appster_text_input_modal_cancel_button_text",
     APPSTER_TEXT_INPUT_MODAL_FOOTER_TEXT: "appster_text_input_modal_footer_text",
 
-    APPSTER_MODAL_ANIMATION_TEXT: "appster_slideInOutLeft"
+    APPSTER_MODAL_ANIMATION_TEXT: "appster_slideInOutLeft",
+
+    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_PROMPT_TEXT: "appster_confirm_modal_no_input_error_prompt_text", // For Part 1
+    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON_TEXT: "appster_confirm_modal_no_input_error_ok_button_text",
+    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_FOOTER_TEXT: "appster_confirm_modal_no_input_error_footer_text",
+
+    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_PROMPT_TEXT: "appster_confirm_modal_duplicate_input_error_prompt_text", // For Part 1
+    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON_TEXT: "appster_confirm_modal_duplicate_input_error_ok_button_text",
+    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_FOOTER_TEXT: "appster_confirm_modal_duplicate_input_error_footer_text",
 }

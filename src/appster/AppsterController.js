@@ -34,14 +34,16 @@ export default class AppsterController {
         // THEN THE CONTROLS ON THE EDIT SCREEN
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_HOME_LINK, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_GO_HOME]);
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TRASH, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_DELETE_WORK]);
-        // NEED TO ADD MORE CONTROLS FOR EDIT SCREEN
+        // TODO: ADD MORE CONTROLS TO EDIT SCREEN, MAYBE NEEDS TO BE ADDED IN GOLOGOLOCONTROLLER
         
         // AND THE MODAL BUTTONS
         // YES/NO MODAL YES NO BUTTONS
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
-        // TEXT MODAL OK BUTTON 
+        // TEXT MODAL OK BUTTONS 
         this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EDIT_TEXT]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]);
         // TEXT MODAL ENTER CANCEL BUTTONS
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT]);
         this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT]);

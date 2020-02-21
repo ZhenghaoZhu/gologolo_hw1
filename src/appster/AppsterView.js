@@ -84,11 +84,15 @@ export default class AppsterView {
             let appsterYesNoModal = this.buildAppsterYesNoModal();
             let appsterConfirmModal = this.buildAppsterConfirmModal();
             let appsterTextInputModal = this.buildAppsterTextInputModal();
+            let appsterConfirmModalNoInputError = this.buildAppsterConfirmModalNoInputError();
+            let appsterConfirmModalDuplicateInputError = this.buildAppsterConfirmModalDuplicateInputError();
             appsterRootDiv.appendChild(appsterHomeScreenDiv);
             appsterRootDiv.appendChild(appsterEditScreenDiv);
             appsterRootDiv.appendChild(appsterYesNoModal);
             appsterRootDiv.appendChild(appsterConfirmModal);
             appsterRootDiv.appendChild(appsterTextInputModal);
+            appsterRootDiv.appendChild(appsterConfirmModalNoInputError);
+            appsterRootDiv.appendChild(appsterConfirmModalDuplicateInputError);
 
             // HIDE THE THINGS THAT ARE NOT VISIBLE
             this.showElementWithId(AppsterGUIId.APPSTER_EDIT_SCREEN, false);            
@@ -341,6 +345,70 @@ export default class AppsterView {
         return textModal;
     }
 
+    buildAppsterConfirmModalNoInputError() {
+        let confirmModalNoInputError = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let confirmFrame = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG, 
+                                            "",
+                                            [],
+                                            [],
+                                            AppsterText.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_PROMPT_TEXT);
+        let okButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        confirmFrame.appendChild(section);
+        section.appendChild(okButton);
+        confirmModalNoInputError.appendChild(confirmFrame);
+        return confirmModalNoInputError;
+    }
+
+    buildAppsterConfirmModalDuplicateInputError() {
+        let confirmModalDuplicateInputError = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let confirmFrame = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG, 
+                                            "",
+                                            [],
+                                            [],
+                                            AppsterText.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_PROMPT_TEXT);
+        let okButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        confirmFrame.appendChild(section);
+        section.appendChild(okButton);
+        confirmModalDuplicateInputError.appendChild(confirmFrame);
+        return confirmModalDuplicateInputError;
+    }
+
     /**
      * This method is for building and returning a link on the home page
      * of the app. One will be built for each item in the recent work list.
@@ -359,15 +427,6 @@ export default class AppsterView {
 //        let callbackArguments = [workName];
 //        this.controller.setupCallback(newA, AppsterHTML.ONCLICK, AppsterCallback.APPSTER_PROCESS_EDIT_WORK, callbackArguments);
         return newA;
-    }
-
-    buildEmptyWorkNameErrorPrompt() {
-        let emptyWorkNameErrorPromptModal = this.buildElement( AppsterHTML.DIV,
-                                                               AppsterGUIId.APPSTER_EMPTY_WORK_NAME_ERROR_PROMPT,
-                                                               [AppsterGUIClass.APPSTER_MODAL],
-                                                               [],
-                                                               null,
-                                                               AppsterGUIClass.MODAL_ANIMATION_LEFT);
     }
 
     refreshRecentWork(recentWork) {
