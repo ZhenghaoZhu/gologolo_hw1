@@ -12,8 +12,10 @@ export default class GoLogoLoController
         super.registerAppsterEventHandlers();
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PROCESS_EDIT_TEXT]);
         // Edit Screen Color Pickers
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_TEXT_COLOR_CHANGE]);
         // Edit Screen Sliders
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
+
     }
 
     processDeleteWork = () => {
@@ -139,7 +141,6 @@ export default class GoLogoLoController
     }
 
     processFontSizeChange = () => {
-        console.log("processFontSizeChange");
         let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
         var currentWork = this.model.currentWork;
         currentWork.setFontSize(currentChange.value);
@@ -147,7 +148,10 @@ export default class GoLogoLoController
     }
 
     processTextColorChange = () => {
-        console.log("processTextColorChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER);
+        var currentWork = this.model.currentWork;
+        currentWork.setTextColor(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 
     processBackgroundColorTextChange = () => {
