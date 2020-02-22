@@ -146,6 +146,7 @@ export const AppsterHTML = {
     CLASS: "class",
     CLICK: "click",
     COLOR: "color",
+    CHANGE: "change",
     DATA_ANIMATION: "data-animation",
     DIV: "div",
     HEADER: "header",

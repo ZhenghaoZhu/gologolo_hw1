@@ -11,6 +11,9 @@ export default class GoLogoLoController
     registerAppsterEventHandlers() {
         super.registerAppsterEventHandlers();
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PROCESS_EDIT_TEXT]);
+        // Edit Screen Color Pickers
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
+        // Edit Screen Sliders
     }
 
     processDeleteWork = () => {
@@ -35,7 +38,6 @@ export default class GoLogoLoController
         return this.model.workToEdit;
     }
 
-    // TODO: Connect OK button and make functional when user wants to create and work on new work
     processCreateNewWork = () => {
         console.log("processCreateNewWork")
         let appsterRootDiv = document.getElementById(AppsterGUIId.APPSTER_ROOT_DIV);
@@ -116,7 +118,6 @@ export default class GoLogoLoController
         let newNameTextField = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXTFIELD); 
         let newText = newNameTextField.value;
         let currentWorkList = this.goList();
-        // TODO: First check that name is not duplicate or no input was given
         if(newText.length < 1) { // Check if text is less than one character
             // Alert user name is invalid because it needs to be at least one character long
             // Show newWorkError modal
@@ -139,6 +140,10 @@ export default class GoLogoLoController
 
     processFontSizeChange = () => {
         console.log("processFontSizeChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER);
+        var currentWork = this.model.currentWork;
+        currentWork.setFontSize(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 
     processTextColorChange = () => {
