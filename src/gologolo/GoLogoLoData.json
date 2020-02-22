@@ -13,6 +13,7 @@
         
         {"appster_confirm_modal_prompt_text": "Please input text to change name of current logo."},
         {"appster_confirm_modal_ok_button_text": "Ok"},
+        {"appster_confirm_modal_cancel_button_text": "Cancel"},
         {"appster_confirm_modal_footer_text": "The name should be unique and at least one character."},
         
         {"appster_text_input_modal_prompt_text": "Enter a name for your logo: "},
@@ -27,6 +28,14 @@
         {"appster_confirm_modal_duplicate_input_error_prompt_text": "Please input a unique name to the text box."},
         {"appster_confirm_modal_duplicate_input_error_ok_button_text": "Ok"},
         {"appster_confirm_modal_duplicate_input_error_footer_text": ""},
+
+        {"appster_edit_text_modal_no_input_error_prompt_text": "Please input one or more characters in the text box."},
+        {"appster_edit_text_modal_no_input_error_ok_button_text": "Ok"},
+        {"appster_edit_text_modal_no_input_error_footer_text": ""},
+
+        {"appster_edit_text_modal_duplicate_input_error_prompt_text": "Please input a unique name to the text box."},
+        {"appster_edit_text_modal_duplicate_input_error_ok_button_text": "Ok"},
+        {"appster_edit_text_modal_duplicate_input_error_footer_text": ""},
 
         {"gologolo_edit_text_text": "Edit Text &#x270e;"},
         {"gologolo_font_size_text": "Font Size: "},

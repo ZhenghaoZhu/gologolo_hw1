@@ -27,9 +27,11 @@ export const AppsterCallback = {
     APPSTER_PROCESS_CONFIRM_DELETE_WORK: "processConfirmDeleteWork",
     APPSTER_PROCESS_CANCEL_DELETE_WORK: "processCancelDeleteWork",
     APPSTER_PROCESS_OK_EDIT_TEXT: "processOKEditText",
+    APPSTER_PROCESS_CANCEL_EDIT_TEXT: "processCancelEditText",
     APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT: "processConfirmNewWork",
     APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT: "processCancelNewWork",
-    APPSTER_PROCESS_OK_EXIT_ERROR: "processOKExitError"
+    APPSTER_PROCESS_OK_EXIT_ERROR: "processOKExitError",
+    APPSTER_PROCESS_EDIT_TEXT_OK_EXIT_ERROR: "processEditTextOkExitError",
 };
 
 /**
@@ -99,6 +101,7 @@ export const AppsterGUIId = {
     APPSTER_CONFIRM_MODAL_SECTION: 'appster_confirm_modal_section',
     APPSTER_CONFIRM_MODAL_TEXTFIELD: "appster_confirm_modal_textfield",
     APPSTER_CONFIRM_MODAL_OK_BUTTON: 'appster_confirm_modal_ok_button',
+    APPSTER_CONFIRM_MODAL_CANCEL_BUTTON: 'appster_confirm_modal_cancel_button',
     APPSTER_CONFIRM_MODAL_FOOTER: 'appster_confirm_frame',
     
     APPSTER_TEXT_INPUT_MODAL: 'appster_text_input_modal',
@@ -119,6 +122,17 @@ export const AppsterGUIId = {
     APPSTER_CONFIRM_MODAL_FRAME_DUPLICATE_INPUT_ERROR_FRAME: 'appster_confirm_modal_duplicate_input_error_frame',
     APPSTER_CONFIRM_MODAL_SECTION_DUPLICATE_INPUT_ERROR_SECTION: 'appster_confirm_modal_duplicate_input_error_section',
     APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON: 'appster_confirm_modal_duplicate_input_error_ok_button',
+
+    APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR: 'appster_edit_text_modal_no_input_error',
+    APPSTER_EDIT_TEXT_MODAL_FRAME_NO_INPUT_ERROR_FRAME: 'appster_edit_text_modal_no_input_error_frame',
+    APPSTER_EDIT_TEXT_MODAL_SECTION_NO_INPUT_ERROR_SECTION: 'appster_edit_text_modal_no_input_error_section',
+    APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_OK_BUTTON: 'appster_edit_text_modal_no_input_error_ok_button',
+
+    APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR: 'appster_edit_text_modal_duplicate_input_error',
+    APPSTER_EDIT_TEXT_MODAL_FRAME_DUPLICATE_INPUT_ERROR_FRAME: 'appster_edit_text_modal_duplicate_input_error_frame',
+    APPSTER_EDIT_TEXT_MODAL_SECTION_DUPLICATE_INPUT_ERROR_SECTION: 'appster_edit_text_modal_duplicate_input_error_section',
+    APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON: 'appster_edit_text_modal_duplicate_input_error_ok_button',
+    
 };
 
 /**
@@ -178,6 +192,7 @@ export const AppsterText = {
 
     APPSTER_CONFIRM_MODAL_PROMPT_TEXT: "appster_confirm_modal_prompt_text", // For Part 3
     APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT: "appster_confirm_modal_ok_button_text",
+    APPSTER_CONFIRM_MODAL_CANCEL_BUTTON_TEXT: "appster_confirm_modal_cancel_button_text",
     APPSTER_CONFIRM_MODAL_FOOTER_TEXT: "appster_confirm_modal_footer_text",
 
     APPSTER_TEXT_INPUT_MODAL_PROMPT_TEXT: "appster_text_input_modal_prompt_text", // For Part 1 
@@ -189,9 +204,13 @@ export const AppsterText = {
 
     APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_PROMPT_TEXT: "appster_confirm_modal_no_input_error_prompt_text", // For Part 1
     APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON_TEXT: "appster_confirm_modal_no_input_error_ok_button_text",
-    APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_FOOTER_TEXT: "appster_confirm_modal_no_input_error_footer_text",
 
     APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_PROMPT_TEXT: "appster_confirm_modal_duplicate_input_error_prompt_text", // For Part 1
     APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON_TEXT: "appster_confirm_modal_duplicate_input_error_ok_button_text",
-    APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR_FOOTER_TEXT: "appster_confirm_modal_duplicate_input_error_footer_text",
+
+    APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_PROMPT_TEXT: "appster_edit_text_modal_no_input_error_prompt_text", // For Part 3
+    APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_OK_BUTTON_TEXT: "appster_edit_text_modal_no_input_error_ok_button_text",
+
+    APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_PROMPT_TEXT: "appster_edit_text_modal_duplicate_input_error_prompt_text", // For Part 3
+    APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON_TEXT: "appster_edit_text_modal_duplicate_input_error_ok_button_text",
 }

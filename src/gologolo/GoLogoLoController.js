@@ -1,5 +1,6 @@
 import AppsterController from '../appster/AppsterController.js'
-import { AppsterGUIId } from '../appster/AppsterConstants.js'
+import { AppsterGUIId, AppsterHTML } from '../appster/AppsterConstants.js'
+import { GoLogoLoGUIId, GoLogoLoCallback } from './GoLogoLoConstants.js'
 
 export default class GoLogoLoController
  extends AppsterController {
@@ -7,8 +8,9 @@ export default class GoLogoLoController
         super();
     }
 
-    processEditText() {
-        this.model.updateText();
+    registerAppsterEventHandlers() {
+        super.registerAppsterEventHandlers();
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PROCESS_EDIT_TEXT]);
     }
 
     processDeleteWork = () => {
@@ -55,7 +57,9 @@ export default class GoLogoLoController
             workListNames[i] = oldWorkList[i].name;
         }
         let newWorkTextBox = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
+        console.log(newWorkTextBox);
         let textInput = newWorkTextBox.value; // Get value from text input box
+        console.log(textInput);
         if(textInput.length < 1) { // Check if text is less than one character
             // Alert user name is invalid because it needs to be at least one character long
             // Show newWorkError modal
@@ -91,14 +95,77 @@ export default class GoLogoLoController
         return this.model.recentWork;
     }
 
-    processOKEditText = () => {
-        console.log("processOKEditText");
-        // TODO: First check that name is not duplicate or no input was given
-    }
-
     processOKExitError = () => { // Show text modal again for further creation of new logo
         this.model.view.hideTextModalNoInputError();
         this.model.view.hideTextModalDuplicateInputError();
         this.model.view.showTextModal();
+    }
+
+    processEditTextOkExitError = () => {
+        this.model.view.hideEditTextModalNoInputError();
+        this.model.view.hideEditTextModalDuplicateInputError();
+        this.model.view.showEditTextModal();
+    }
+
+    processEditText = () => {
+        this.model.view.showEditTextModal();
+    }
+
+    processOKEditText = () => {
+        console.log("processOKEditText");
+        let newNameTextField = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXTFIELD); 
+        let newText = newNameTextField.value;
+        let currentWorkList = this.goList();
+        // TODO: First check that name is not duplicate or no input was given
+        if(newText.length < 1) { // Check if text is less than one character
+            // Alert user name is invalid because it needs to be at least one character long
+            // Show newWorkError modal
+            newNameTextField.value = ""; // Clear textBox
+            this.model.view.hideEditTextModal();
+            this.model.view.showEditTextModalNoInputError()
+        }
+        else { 
+            this.model.view.hideEditTextModal(); // Hide modal
+            currentWorkList[0].text = newText; // Update object
+            let currentText = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+            currentText.innerHTML = newText; // Update current text on screen
+            newNameTextField.value = "" // Clear text field
+        }
+    }
+
+    processCancelEditText = () => {
+        this.model.view.hideEditTextModal();
+    }
+
+    processFontSizeChange = () => {
+        console.log("processFontSizeChange");
+    }
+
+    processTextColorChange = () => {
+        console.log("processTextColorChange");
+    }
+
+    processBackgroundColorTextChange = () => {
+        console.log("processBackgroundColorTextChange");
+    }
+
+    processBorderColorTextChange = () => {
+        console.log("processBorderColorTextChange");
+    }
+
+    processBorderRadiusTextChange = () => {
+        console.log("processBorderRadiusTextChange");
+    }
+
+    processBorderThicknessTextChange = () => {
+        console.log("processBorderThicknessTextChange");
+    }
+
+    processPaddingTextChange = () => {
+        console.log("processPaddingTextChange");
+    }
+
+    processMarginTextChange = () => {
+        console.log("processMarginTextChange");
     }
 }

@@ -38,15 +38,19 @@ export default class AppsterController {
         
         // AND THE MODAL BUTTONS
         // YES/NO MODAL YES NO BUTTONS
-        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]);
-        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]);
-        // TEXT MODAL OK BUTTONS 
-        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EDIT_TEXT]);
-        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]);
-        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]);
-        // TEXT MODAL ENTER CANCEL BUTTONS
-        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT]);
-        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT]);
+        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]); // Trash Button
+        this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]); // Trash Button
+        // New Work Button Cases
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_ENTER_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_NEW_WORK_TEXT]); // Edit Text
+        this.registerEventHandler(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_NEW_WORK_TEXT]); // Edit Text
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_NO_INPUT_ERROR_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]); // New Work
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EXIT_ERROR]); // New Work
+
+        // Edit Text Button Cases
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_OK_EDIT_TEXT]); // Edit Text
+        this.registerEventHandler(AppsterGUIId.APPSTER_CONFIRM_MODAL_CANCEL_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_EDIT_TEXT]); // Edit Text
+        this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_OK_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_EDIT_TEXT_OK_EXIT_ERROR]); // Edit Text
+        this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_EDIT_TEXT_OK_EXIT_ERROR]); // Edit Text
     }
 
     /**

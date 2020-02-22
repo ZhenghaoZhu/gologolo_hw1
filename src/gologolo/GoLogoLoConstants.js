@@ -40,3 +40,19 @@ export const GoLogoLoText = {
     GOLOGOLO_PADDING_TEXT: "gologolo_padding_text",
     GOLOGOLO_MARGIN_TEXT: "gologolo_margin_text"
 }
+
+export const GoLogoLoHTML = {
+    "CHANGE": "change",
+}
+
+export const GoLogoLoCallback = {
+    GOLOGOLO_PROCESS_EDIT_TEXT: "processEditText",
+    GOLOGOLO_PROCESS_FONT_SIZE_CHANGE: "processFontSizeChange",
+    GOLOGOLO_PROCESS_TEXT_COLOR_CHANGE: "processTextColorChange",
+    GOLOGOLO_PROCESS_BACKGROUND_COLOR_TEXT_CHANGE: "processBackgroundColorTextChange",
+    GOLOGOLO_PROCESS_BORDER_COLOR_TEXT_CHANGE: "processBorderColorTextChange",
+    GOLOGOLO_PROCESS_BORDER_RADIUS_TEXT_CHANGE: "processBorderRadiusTextChange",
+    GOLOGOLO_PROCESS_BORDER_THICKNESS_TEXT_CHANGE: "processBorderThicknessTextChange",
+    GOLOGOLO_PROCESS_PADDING_TEXT_CHANGE: "processPaddingTextChange",
+    GOLOGOLO_PROCESS_MARGIN_TEXT_CHANGE: "processMarginTextChange",
+}

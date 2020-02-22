@@ -86,6 +86,8 @@ export default class AppsterView {
             let appsterTextInputModal = this.buildAppsterTextInputModal();
             let appsterConfirmModalNoInputError = this.buildAppsterConfirmModalNoInputError();
             let appsterConfirmModalDuplicateInputError = this.buildAppsterConfirmModalDuplicateInputError();
+            let appsterEditTextModalNoInputError = this.buildAppsterEditTextModalNoInputError();
+            let appsterEditTextModalDuplicateInputError = this.buildAppsterEditTextModalDuplicateInputError();
             appsterRootDiv.appendChild(appsterHomeScreenDiv);
             appsterRootDiv.appendChild(appsterEditScreenDiv);
             appsterRootDiv.appendChild(appsterYesNoModal);
@@ -93,6 +95,8 @@ export default class AppsterView {
             appsterRootDiv.appendChild(appsterTextInputModal);
             appsterRootDiv.appendChild(appsterConfirmModalNoInputError);
             appsterRootDiv.appendChild(appsterConfirmModalDuplicateInputError);
+            appsterRootDiv.appendChild(appsterEditTextModalNoInputError);
+            appsterRootDiv.appendChild(appsterEditTextModalDuplicateInputError);
 
             // HIDE THE THINGS THAT ARE NOT VISIBLE
             this.showElementWithId(AppsterGUIId.APPSTER_EDIT_SCREEN, false);            
@@ -270,11 +274,22 @@ export default class AppsterView {
                                             [],
                                             [],
                                             AppsterText.APPSTER_CONFIRM_MODAL_PROMPT_TEXT);
+        let textFieldAttributes = [];
+        textFieldAttributes[AppsterHTML.TYPE] = AppsterHTML.TEXT;
+        let textField = this.buildElement(  AppsterHTML.INPUT,
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXTFIELD,
+                                            [AppsterGUIClass.APPSTER_MODAL_TEXTFIELD],
+                                            textFieldAttributes);
         let okButton = this.buildElement(   AppsterHTML.BUTTON, 
                                             AppsterGUIId.APPSTER_CONFIRM_MODAL_OK_BUTTON,
                                             [AppsterGUIClass.APPSTER_MODAL_BUTTON],
                                             [],
                                             AppsterText.APPSTER_CONFIRM_MODAL_OK_BUTTON_TEXT);
+        let cancelButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_CONFIRM_MODAL_CANCEL_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_CONFIRM_MODAL_CANCEL_BUTTON_TEXT);
         let footer = this.buildElement(     AppsterHTML.FOOTER, 
                                             "", 
                                             [AppsterGUIClass.APPSTER_MODAL_FOOTER],
@@ -284,7 +299,9 @@ export default class AppsterView {
         section.appendChild(p);
         confirmFrame.appendChild(header);
         confirmFrame.appendChild(section);
+        section.appendChild(textField);
         section.appendChild(okButton);
+        section.appendChild(cancelButton);
         confirmFrame.appendChild(footer);
         confirmModal.appendChild(confirmFrame);
         return confirmModal;
@@ -407,6 +424,70 @@ export default class AppsterView {
         section.appendChild(okButton);
         confirmModalDuplicateInputError.appendChild(confirmFrame);
         return confirmModalDuplicateInputError;
+    }
+
+    buildAppsterEditTextModalNoInputError() {
+        let editTextModalNoInputError = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let confirmFrame = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG, 
+                                            "",
+                                            [],
+                                            [],
+                                            AppsterText.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_PROMPT_TEXT);
+        let okButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_OK_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR_OK_BUTTON_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        confirmFrame.appendChild(section);
+        section.appendChild(okButton);
+        editTextModalNoInputError.appendChild(confirmFrame);
+        return editTextModalNoInputError;
+    }
+
+    buildAppsterEditTextModalDuplicateInputError() {
+        let editTextModalDuplicateInputError = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR,
+                                            [AppsterGUIClass.APPSTER_MODAL],
+                                            [],
+                                            null,
+                                            AppsterGUIClass.MODAL_ANIMATION_LEFT);
+        let confirmFrame = this.buildElement( AppsterHTML.DIV, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_FRAME,
+                                            [AppsterGUIClass.APPSTER_MODAL_FRAME]);
+        let section = this.buildElement(    AppsterHTML.SECTION, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_SECTION,
+                                            [AppsterGUIClass.APPSTER_MODAL_SECTION]);
+        let p = this.buildElement(AppsterHTML.P);
+        let strong = this.buildElement(     AppsterHTML.STRONG, 
+                                            "",
+                                            [],
+                                            [],
+                                            AppsterText.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_PROMPT_TEXT);
+        let okButton = this.buildElement(   AppsterHTML.BUTTON, 
+                                            AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON,
+                                            [AppsterGUIClass.APPSTER_MODAL_BUTTON],
+                                            [],
+                                            AppsterText.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR_OK_BUTTON_TEXT);
+        p.appendChild(strong);
+        section.appendChild(p);
+        confirmFrame.appendChild(section);
+        section.appendChild(okButton);
+        editTextModalDuplicateInputError.appendChild(confirmFrame);
+        return editTextModalDuplicateInputError;
     }
 
     /**

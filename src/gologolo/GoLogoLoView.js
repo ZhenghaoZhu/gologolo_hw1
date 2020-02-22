@@ -132,4 +132,34 @@ export default class GoLogoLoView extends AppsterView {
         let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_DUPLICATE_INPUT_ERROR);
         errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
     }
+
+    showEditTextModal() {
+        let editTextModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        editTextModal.classList.add(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    hideEditTextModal() {
+        let editTextModal = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL);
+        editTextModal.classList.remove(AppsterGUIClass.IS_VISIBLE);
+    }
+
+    showEditTextModalNoInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR);
+        errorInputModal.classList.add(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    hideEditTextModalNoInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_NO_INPUT_ERROR);
+        errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    showEditTextModalDuplicateInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR);
+        errorInputModal.classList.add(AppsterGUIClass.IS_VISIBLE)
+    }
+
+    hideEditTextModalDuplicateInputError() {
+        let errorInputModal = document.getElementById(AppsterGUIId.APPSTER_EDIT_TEXT_MODAL_DUPLICATE_INPUT_ERROR);
+        errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
+    }
 }
