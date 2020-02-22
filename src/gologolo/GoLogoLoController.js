@@ -18,7 +18,7 @@ export default class GoLogoLoController
         // Edit Screen Sliders
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_RADIUS_TEXT_CHANGE]);
-        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_THICKNESS_TEXT_CHANGE]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_WIDTH_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_WIDTH_TEXT_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_PADDING_TEXT_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_MARGIN_TEXT_CHANGE]);
     }
@@ -179,10 +179,11 @@ export default class GoLogoLoController
         this.model.view.loadWorkStyle(currentWork);
     }
 
-    processBorderThicknessTextChange = () => {
-        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER);
+    processBorderWidthTextChange = () => {
+        console.log("Here");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_WIDTH_SLIDER);
         var currentWork = this.model.currentWork;
-        currentWork.setBorderThickness(currentChange.value);
+        currentWork.setBorderWidth(currentChange.value);
         this.model.view.loadWorkStyle(currentWork);
     }
 

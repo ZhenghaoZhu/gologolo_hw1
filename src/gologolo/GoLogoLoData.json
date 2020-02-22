@@ -43,7 +43,7 @@
         {"gologolo_background_color_text": "Background Color: "},
         {"gologolo_border_color_text": "Border Color: "},
         {"gologolo_border_radius_text": "Border Radius: "},
-        {"gologolo_border_thickness_text": "Border Thickness: "},
+        {"gologolo_border_width_text": "Border Thickness: "},
         {"gologolo_padding_text": "Padding: "},
         {"gologolo_margin_text": "Margin: "}
 
@@ -55,9 +55,10 @@
             "font_size": 30,
             "text_color": "#123456",
             "background_color": "#654321",
+            "border": "solid",
             "border_color": "#abcdef",
             "border_radius": 15,
-            "border_thickness": 2,
+            "border_width": 2,
             "padding": 20,
             "margin": 10
         },
@@ -67,9 +68,10 @@
             "font_size": 16,
             "text_color": "#13579b",
             "background_color": "#b97531",
+            "border": "solid",
             "border_color": "#004488",
             "border_radius": 10,
-            "border_thickness": 5,
+            "border_width": 5,
             "padding": 5,
             "margin": 5
         },
@@ -79,9 +81,10 @@
             "font_size": 48,
             "text_color": "#bbeeee",
             "background_color": "#224400",
+            "border": "solid",
             "border_color": "#000033",
             "border_radius": 1,
-            "border_thickness": 12,
+            "border_width": 12,
             "padding": 5,
             "margin": 10
         }

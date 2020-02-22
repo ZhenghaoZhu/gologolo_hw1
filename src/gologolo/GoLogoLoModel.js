@@ -34,9 +34,10 @@ export default class GoLogoLoModel extends AppsterModel {
                 appWork.setFontSize(jsonWork.font_size);
                 appWork.setTextColor(jsonWork.text_color);
                 appWork.setBackgroundColor(jsonWork.background_color);
+                appWork.setBorder(jsonWork.border);
                 appWork.setBorderColor(jsonWork.border_color);
                 appWork.setBorderRadius(jsonWork.border_radius);
-                appWork.setBorderThickness(jsonWork.border_thickness);
+                appWork.setBorderWidth(jsonWork.border_width);
                 appWork.setPadding(jsonWork.padding);
                 appWork.setMargin(jsonWork.margin);
             }
@@ -53,9 +54,10 @@ export default class GoLogoLoModel extends AppsterModel {
         appWork.setFontSize(GoLogoLoDefaults.GOLOGOLO_DEFAULT_FONT_SIZE);
         appWork.setTextColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_TEXT_COLOR);
         appWork.setBackgroundColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BACKGROUND_COLOR);
+        appWork.setBorder(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER);
         appWork.setBorderColor(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_COLOR);
         appWork.setBorderRadius(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_RADIUS);
-        appWork.setBorderThickness(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_THICKNESS);
+        appWork.setBorderWidth(GoLogoLoDefaults.GOLOGOLO_DEFAULT_BORDER_WIDTH);
         appWork.setPadding(GoLogoLoDefaults.GOLOGOLO_DEFAULT_PADDING);
         appWork.setMargin(GoLogoLoDefaults.GOLOGOLO_DEFAULT_MARGIN);
 
