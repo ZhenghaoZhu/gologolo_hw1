@@ -46,9 +46,6 @@ export default class GoLogoLoController
     }
 
     processCreateNewWork = () => {
-        console.log("processCreateNewWork")
-        let appsterRootDiv = document.getElementById(AppsterGUIId.APPSTER_ROOT_DIV);
-        console.log(appsterRootDiv);
         // PROMPT FOR THE NAME OF THE NEW LIST
         this.model.view.showTextModal();
         let newWorkTextBox = document.getElementById(AppsterGUIId.APPSTER_TEXT_INPUT_MODAL_TEXTFIELD);
@@ -118,6 +115,8 @@ export default class GoLogoLoController
 
     processEditText = () => {
         this.model.view.showEditTextModal();
+        let editTextTexTField = document.getElementById(AppsterGUIId.APPSTER_CONFIRM_MODAL_TEXTFIELD);
+        editTextTexTField.placeholder = "Input New Text";
     }
 
     processOKEditText = () => {

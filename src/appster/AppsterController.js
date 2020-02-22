@@ -34,9 +34,6 @@ export default class AppsterController {
         // THEN THE CONTROLS ON THE EDIT SCREEN
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_HOME_LINK, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_GO_HOME]);
         this.registerEventHandler(AppsterGUIId.APPSTER_EDIT_TRASH, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_DELETE_WORK]);
-        // TODO: ADD MORE CONTROLS TO EDIT SCREEN, MAYBE NEEDS TO BE ADDED IN GOLOGOLOCONTROLLER
-        
-        // AND THE MODAL BUTTONS
         // YES/NO MODAL YES NO BUTTONS
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_YES_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CONFIRM_DELETE_WORK]); // Trash Button
         this.registerEventHandler(AppsterGUIId.APPSTER_YES_NO_MODAL_NO_BUTTON, AppsterHTML.CLICK, this[AppsterCallback.APPSTER_PROCESS_CANCEL_DELETE_WORK]); // Trash Button
@@ -142,7 +139,7 @@ export default class AppsterController {
      * name of the list via the textfield.
      */
     processChangeName() {
-        let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD); // FIXME: Fix Legacy code in this line
+        let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD); 
         let newName = nameTextField.value;
         let listBeingEdited = window.todo.model.listToEdit;
         window.todo.model.updateListName(listBeingEdited, newName);
