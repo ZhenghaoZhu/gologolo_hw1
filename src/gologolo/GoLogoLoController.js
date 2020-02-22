@@ -20,6 +20,7 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_RADIUS_TEXT_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_THICKNESS_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_THICKNESS_TEXT_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_PADDING_TEXT_CHANGE]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_MARGIN_TEXT_CHANGE]);
     }
 
     processDeleteWork = () => {
@@ -194,6 +195,9 @@ export default class GoLogoLoController
     }
 
     processMarginTextChange = () => {
-        console.log("processMarginTextChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER);
+        var currentWork = this.model.currentWork;
+        currentWork.setMargin(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 }
