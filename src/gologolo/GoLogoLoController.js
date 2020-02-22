@@ -17,7 +17,7 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_COLOR_TEXT_CHANGE]);                
         // Edit Screen Sliders
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
-
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_RADIUS_TEXT_CHANGE]);
     }
 
     processDeleteWork = () => {
@@ -171,7 +171,10 @@ export default class GoLogoLoController
     }
 
     processBorderRadiusTextChange = () => {
-        console.log("processBorderRadiusTextChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_RADIUS_SLIDER);
+        var currentWork = this.model.currentWork;
+        currentWork.setBorderRadius(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 
     processBorderThicknessTextChange = () => {
