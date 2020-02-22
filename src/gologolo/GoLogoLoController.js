@@ -14,6 +14,7 @@ export default class GoLogoLoController
         // Edit Screen Color Pickers
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_TEXT_COLOR_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BACKGROUND_COLOR_TEXT_CHANGE]);        
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BORDER_COLOR_TEXT_CHANGE]);                
         // Edit Screen Sliders
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
 
@@ -163,7 +164,10 @@ export default class GoLogoLoController
     }
 
     processBorderColorTextChange = () => {
-        console.log("processBorderColorTextChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_COLOR_PICKER);
+        var currentWork = this.model.currentWork;
+        currentWork.setBorderColor(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 
     processBorderRadiusTextChange = () => {
