@@ -13,6 +13,7 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_EDIT_TEXT_BUTTON, AppsterHTML.CLICK, this[GoLogoLoCallback.GOLOGOLO_PROCESS_EDIT_TEXT]);
         // Edit Screen Color Pickers
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_TEXT_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_TEXT_COLOR_CHANGE]);
+        this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_BACKGROUND_COLOR_TEXT_CHANGE]);        
         // Edit Screen Sliders
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_FONT_SIZE_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_FONT_SIZE_CHANGE]);
 
@@ -155,7 +156,10 @@ export default class GoLogoLoController
     }
 
     processBackgroundColorTextChange = () => {
-        console.log("processBackgroundColorTextChange");
+        let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BACKGROUND_COLOR_PICKER);
+        var currentWork = this.model.currentWork;
+        currentWork.setBackgroundColor(currentChange.value);
+        this.model.view.loadWorkStyle(currentWork);
     }
 
     processBorderColorTextChange = () => {
