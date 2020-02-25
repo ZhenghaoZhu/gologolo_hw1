@@ -82,6 +82,9 @@ export default class GoLogoLoView extends AppsterView {
 
     loadWorkStyle(work) {
         let textDiv = document.getElementById(GoLogoLoGUIId.GOLOGOLO_TEXT);
+        if(work.getFontSize() < 10) {
+            work.setFontSize(10);
+        }
         textDiv.style.fontSize = work.getFontSize() + "px";
         textDiv.style.color = work.getTextColor();
         textDiv.style.backgroundColor = work.getBackgroundColor();
