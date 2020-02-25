@@ -97,52 +97,8 @@ export default class AppsterController {
      * new work.
      */
     processCreateNewWork() {
-        console.log("processCreateNewWork");
+        // IMPLEMENTED IN CHILD CLASS
 
-        // PROMPT FOR THE NAME OF THE NEW LIST
-        
-        // MAKE A BRAND NEW LIST
-        this.model.goList();
-    }
-
-    /**
-     * This function responds to when the user clicks on a link
-     * for recent work on the home screen.
-     * 
-     * @param {String} workName The name of the work to load into
-     * the controls on the edit screen.
-     */
-    processEditWork = (event) => {
-        console.log("processEditWork");
-
-        // GET THE WORK THAT THE USER WANTS TO LOAD
-        let clickedElement = event.target;
-        let workName = clickedElement.workId;
-        console.log(workName + " clicked");
-
-        // START EDITING THE SELECTED WORK
-        this.model.editWork(workName);
-    }
-
-    /**
-     * This function responds to when the user clicks the No
-     * button in the popup dialog after having requested to delete
-     * the loaded work.
-     */
-    processCancelDeleteWork() {
-        // JUST HIDE THE DIALOG
-
-    }
-
-    /**
-     * This function responds to when the user changes the
-     * name of the list via the textfield.
-     */
-    processChangeName() {
-        let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD); 
-        let newName = nameTextField.value;
-        let listBeingEdited = window.todo.model.listToEdit;
-        window.todo.model.updateListName(listBeingEdited, newName);
     }
 
     /**
@@ -151,11 +107,7 @@ export default class AppsterController {
      * the loaded work.
      */
     processConfirmDeleteWork() {
-        // DELETE THE WORK
-        this.model.removeWork(this.model.getWorkToEdit());
-
-        // GO BACK TO THE HOME SCREEN
-        this.model.goHome();
+        // IMPLEMENTED IN CHILD CLASS
     }
 
     /**
@@ -165,6 +117,7 @@ export default class AppsterController {
      */
     processDeleteWork() {
         // VERIFY VIA A DIALOG BOX
+        // IMPLEMENTED IN CHILD CLASS
         window.todo.model.view.showDialog();
     }
 }

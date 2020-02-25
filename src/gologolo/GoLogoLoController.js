@@ -22,6 +22,7 @@ export default class GoLogoLoController
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_PADDING_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_PADDING_TEXT_CHANGE]);
         this.registerEventHandler(GoLogoLoGUIId.GOLOGOLO_MARGIN_SLIDER, AppsterHTML.CHANGE, this[GoLogoLoCallback.GOLOGOLO_PROCESS_MARGIN_TEXT_CHANGE]);
     }
+    // DONE
 
     processDeleteWork = () => {
         this.model.view.showDialog();
@@ -83,12 +84,24 @@ export default class GoLogoLoController
             // ADD IT TO LIST
             newWorkTextBox.value = ""; // Clear textBox
             this.model.view.hideTextModal(); // Hide modal
-            let newAppWork = this.model.updateText(oldWorkList, textInput); // Build new list with new work after checking input
+            let newAppWork = this.model.updateText(textInput); // Build new list with new work after checking input
             this.model.recentWork.push(newAppWork); // Add it to list
             this.model.view.refreshRecentWork(this.model.recentWork); // Refresh the work
             // SEND USER TO EDIT SCREEN OF NEW WORK
             this.model.editWork(textInput);
         }
+    }
+
+    processEditWork = (event) => {
+        console.log("processEditWork");
+
+        // GET THE WORK THAT THE USER WANTS TO LOAD
+        let clickedElement = event.target;
+        let workName = clickedElement.workId;
+        console.log(workName + " clicked");
+
+        // START EDITING THE SELECTED WORK
+        this.model.editWork(workName);
     }
 
     processCancelNewWork = () => {
@@ -180,7 +193,6 @@ export default class GoLogoLoController
     }
 
     processBorderWidthTextChange = () => {
-        console.log("Here");
         let currentChange = document.getElementById(GoLogoLoGUIId.GOLOGOLO_BORDER_WIDTH_SLIDER);
         var currentWork = this.model.currentWork;
         currentWork.setBorderWidth(currentChange.value);
@@ -201,3 +213,5 @@ export default class GoLogoLoController
         this.model.view.loadWorkStyle(currentWork);
     }
 }
+
+// DONE

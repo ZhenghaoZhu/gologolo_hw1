@@ -167,3 +167,5 @@ export default class GoLogoLoView extends AppsterView {
         errorInputModal.classList.remove(AppsterGUIClass.IS_VISIBLE)
     }
 }
+
+// DONE
