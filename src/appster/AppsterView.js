@@ -46,7 +46,7 @@ export default class AppsterView {
 
     // THESE ARE FUNCTIONS THAT ARE TO BE OVERRIDDEN BY THE CHILD CLASS
     fillAppWorkspace(workspace) {
-        
+        // IMPLEMENTED IN CHILD CLASS
     }
 
     setupHandlers() {
@@ -197,7 +197,6 @@ export default class AppsterView {
         let editScreenDiv = this.buildElement(AppsterHTML.DIV, AppsterGUIId.APPSTER_EDIT_SCREEN);
         editScreenDiv.appendChild(toolbarDiv);
 
-        // THIS IS APP-SPECIFIC AND WILL BE DONE BY THE CHILD CLASS
         let workspace = this.buildElement(AppsterHTML.DIV, AppsterGUIId.APPSTER_EDIT_WORKSPACE);
         this.fillAppWorkspace(workspace);
         editScreenDiv.appendChild(workspace);

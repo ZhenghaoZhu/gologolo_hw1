@@ -46,7 +46,7 @@ export default class GoLogoLoModel extends AppsterModel {
         return appWork;
     }
 
-    updateText(workArray, name) { // To add new work into workList
+    updateText(name) { // To add new work into workList
         let appWork = new GoLogoLoLogo();
         
         appWork.setName(name);
@@ -64,3 +64,5 @@ export default class GoLogoLoModel extends AppsterModel {
         return appWork;
     }
 }
+
+// DONE
